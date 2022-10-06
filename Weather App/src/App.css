@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap');
+
+body {
+    background-color: #100E1D;
+    color: #E7E7EB;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    width: 100vw;
+    /* overflow: hidden; */
+
+}
+
+.App {
+    display: flex;
+}
+
+.side_panel { 
+    flex: 0 1 32%;
+    min-width: 359px;
+    padding: 42px 46px;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: center;
+    background-color: #1E213A;
+}
+.side_top_section {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    
+}
+
+button {
+    color: inherit;
+}
+
+.btn_search_location { 
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 11px 18px;
+}
+
+.btn_circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 9px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.get_user_location { 
+    background: rgba(255, 255, 255, 0.2);
+}
+.get_user_location .material-symbols-outlined { 
+    font-size: 22px;
+    line-height: 100%;
+}
+.weather_illustration_part {
+    height: 397px;
+    position: relative;
+}
+.weather_illustration_img { 
+    position: absolute;
+    top: 20%;
+    scale: 1.2;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.weather_illustration_bg { 
+    position: relative;
+    top: 25%;
+    scale: 1.75;
+    left: 0;
+    z-index: 1;
+    opacity: 0.15;
+}
+.temprature_figure { 
+    font-weight: 500;
+    font-size: 144px;
+    line-height: 150px;
+    
+}
+.temp_unit { 
+    color: #A09FB1;
+    font-size: 60px;
+    line-height: 60px;
+}
+.weather_description { 
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    color: #A09FB1;
+    margin: 87px 0;
+}
+.side_lower_date { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #88869D;
+    margin-bottom: 32px;
+}
+
+.displayed_weather_location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: #88869D;
+ }
+
+.weather_details { 
+    
+    z-index: 3;
+    padding: 42px 125px;
+}
+.main_container { 
+    display: flex;
+    flex-direction: column;
+}
+.unit_selection_btns {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #E7E7EB;
+ }
+
+.btn_unit_selection:first-child { 
+    background: #E7E7EB;
+    color: #110E3C;
+}
+.five_days_forecast_part {
+    display: flex;
+    justify-content: flex-start;
+    gap: 26px;
+    margin: 65px 0;
+    flex-wrap: nowrap;
+ }
+.weather_sm_card {
+    text-align: center;
+    background: #1E213A;
+    padding: 18px 22px;
+ }
+.forecast_day { 
+    white-space: nowrap;
+    overflow: hidden;
+}
+.forecast_sm_img {
+    min-width: 56px;
+    padding-bottom: 32px;
+    margin: 0 auto;
+ }
+.forecast_minmax {
+    display: flex;
+    justify-content: space-between;
+ }
+.forecast_max_temp { }
+.forecast_min_temp { }
+.weather_highlights_title { }
+.weather_highlights_part { }
+.highligt_card { }
+.highlight_title { }
+.highlight_figure { }
+.highlight_unit { }
+.wind_direction_part { }
+.wind_direction_bg { }
+.wind_direction_text { }
+.humidity_meter_part { }
+.humidity_value_marker { }
+.humidity_meter_bar { }
+.humidity_meter_bg { }
+.humidity_value_unit { }
