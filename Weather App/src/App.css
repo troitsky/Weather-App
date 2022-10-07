@@ -19,6 +19,7 @@ body {
 
 .side_panel { 
     flex: 0 1 32%;
+    display: flex;
     min-width: 359px;
     padding: 42px 46px;
     position: relative;
@@ -31,11 +32,13 @@ body {
     display: flex;
     justify-content: space-between;
     text-align: center;
+    position: relative;
     
 }
 
 button {
     color: inherit;
+    border-style: none;
 }
 
 .btn_search_location { 
@@ -174,20 +177,166 @@ button {
 .forecast_minmax {
     display: flex;
     justify-content: space-between;
+    color: #E7E7EB;
  }
-.forecast_max_temp { }
-.forecast_min_temp { }
-.weather_highlights_title { }
-.weather_highlights_part { }
-.highligt_card { }
-.highlight_title { }
-.highlight_figure { }
-.highlight_unit { }
-.wind_direction_part { }
-.wind_direction_bg { }
-.wind_direction_text { }
-.humidity_meter_part { }
-.humidity_value_marker { }
-.humidity_meter_bar { }
-.humidity_meter_bg { }
-.humidity_value_unit { }
+
+.forecast_min_temp { 
+    color:#A09FB1
+}
+.weather_highlights_title { 
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 72px;
+    margin-bottom: 32px;
+}
+.weather_highlights_part {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    justify-content: space-between;
+ }
+.highligt_card { 
+    flex: 1 1 calc(50% - 48px);
+    padding-top: 22px;
+    padding-bottom: 37px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #1E213A;
+    
+}
+.highlight_title { 
+    font-size: 16px;
+    line-height: 19px;
+    color: #E7E7EB;
+}
+.highlight_figure {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 75px;
+    color: #E7E7EB;
+    padding-bottom: 17px;
+ }
+.highlight_unit { 
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 42px;
+}
+.wind_direction_part { 
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.wind_direction_bg { 
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(-150deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wind_direction_text { 
+    font-size: 14px;
+    line-height: 16px;
+}
+.humidity_meter_part {
+    width: 100%;
+    padding: 0 49px;
+    position: relative;
+ }
+.markers_row {
+    display: flex;
+    justify-content: space-between;
+
+}
+.humidity_value_marker, .humidity_value_unit { 
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    color: #A09FB1;
+}
+.humidity_meter_bar {
+    width: 84%;
+    background: #FFEC65;
+    border-radius: 80px;
+    height: 8px;
+    top: 8px;
+    position: relative;
+ }
+.humidity_meter_bg { 
+    width: 100%;
+    background: #E7E7EB;
+    border-radius: 80px;
+    height: 8px;
+}
+.humidity_value_unit { 
+    margin-top: 2px;
+    float: right;
+}
+
+/* sidemenu search variant */
+
+.side_top_search_section {
+    display: flex;
+    gap: 12px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.side_close_icon {
+    align-self: flex-end;
+    top: -20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.search_icon {
+    position: absolute;
+    color: #616475;
+    top: 15px;
+    left: 15px;
+}
+.location_input {
+    background-color: #1E213A;
+    border: 1px solid #E7E7EB;
+    padding: 14px 0;
+    padding-left: 50px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #616475;
+}
+.location_input:focus {
+    color: #E7E7EB;
+}
+.btn_search {
+    background: #3C47E9;
+    padding: 14px 19px;
+    border-style: none;
+ }
+.search_results {
+    list-style: none;
+    margin-left: 0;
+    margin:0;
+    padding: 0;
+    text-indent: 0;
+    list-style-type: 0;
+    text-align: left;
+    margin-top: 58px;
+ }
+.search_result { 
+    display: flex;
+    align-items: center;
+    padding: 23px 12px;
+    justify-content: space-between;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.search_result:hover { 
+  border: 1px solid #616475;
+}
