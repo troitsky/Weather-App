@@ -109,7 +109,7 @@ function App() {
                 <p className="highlight_title">Humidity</p>
                 <p className="highlight_figure">84<span className='highlight_unit'>%</span></p>
                 <div className="humidity_meter_part">
-                  <div classNameName="markers_row">
+                  <div className="markers_row">
                     <p className='humidity_value_marker'>0</p>
                     <p className='humidity_value_marker'>50</p>
                     <p className='humidity_value_marker'>100</p>

@@ -8,7 +8,8 @@ body {
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
     /* overflow: hidden; */
 
 }
@@ -21,6 +22,7 @@ body {
     flex: 0 1 32%;
     display: flex;
     min-width: 359px;
+    min-height: 100vh;
     padding: 42px 46px;
     position: relative;
     overflow: hidden;
@@ -251,6 +253,7 @@ button {
  }
 .markers_row {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
 
 }
@@ -339,4 +342,43 @@ button {
 
 .search_result:hover { 
   border: 1px solid #616475;
+}
+
+/* Reponsive settings */
+
+@media (max-width: 1220px) {
+    .side_panel {
+        min-width: 314px;
+    }
+
+    .weather_details {
+        padding: 42px 50px;
+    }
+
+    .five_days_forecast_part {
+        flex-wrap: wrap;
+    }
+
+    .weather_sm_card .forecast_sm_img {
+        max-height: 115px;
+    }
+
+    .weather_highlights_title {
+        margin-top: 50px;
+    }
+
+}
+
+@media (max-width: 825px) {
+    .App {
+        flex-direction: column;
+    }
+
+    .five_days_forecast_part {
+        justify-content: center;
+    }
+
+    .highligt_card {
+        flex: 1 1 100%;
+    }
 }
