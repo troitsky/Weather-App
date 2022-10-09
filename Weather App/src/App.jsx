@@ -1,8 +1,38 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [location, setLocation] = useState('Moscow')
+  const [weatherData, setWeather] = useState(null)
+
+  useEffect(() => {
+    getWeatherData()
+  }, [])
+
+  // utilities
+  const weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+
+  const currentDate = new Date();
+  let weekDay = weekdays[currentDate.getDay()];
+  let  date = currentDate.getDate()
+  let month = months[currentDate.getMonth()];
+
+  async function getWeatherData() {
+    const res = await fetch("/mock_api_data.json")
+    const data = await res.json();
+    setWeather(data)
+  }
+
+  let currentWeatherIcon, currentTemp, currentWeatherDesc;
+
+  if (weatherData) {
+    currentTemp = Math.floor(weatherData.current.temp) ;
+    currentWeatherIcon = `http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@4x.png`;
+    currentWeatherDesc = weatherData.current.weather[0].main;
+    console.log(currentWeatherIcon)
+  }
 
   return (
     <div className="App">
@@ -14,17 +44,17 @@ function App() {
           <button className="btn_circle get_user_location"><span className="material-symbols-outlined">my_location</span></button>
         </div>
         <div className='weather_illustration_part'>
-          <img src="Cloud-background.png" className="weather_illustration_bg" alt="" />
-          <img src="/HeavyRain.png" alt="" className="weather_illustration_img" />
+          <img src='/Cloud-background.png' className="weather_illustration_bg" alt="" />
+          <img src={currentWeatherIcon} alt="" className="weather_illustration_img" />
         </div>
-        <p className="temprature_figure">15<span className='temp_unit'>°C</span></p>
-        <p className="weather_description">Shower</p>
+        <p className="temprature_figure">{currentTemp}<span className='temp_unit'>°C</span></p>
+        <p className="weather_description">{currentWeatherDesc}</p>
         <div className="side_lower_date">
           <p className='displayed_weather_day'>Today</p>
-          <span classNameName='date_divider'>•</span>
-          <p className='displayed_weather_date'>Fri, 5 Jun</p>
+          <span className='date_divider'>•</span>
+          <p className='displayed_weather_date'>{weekDay}, {date} {month}</p>
         </div>
-        <p className="displayed_weather_location"><span className="material-symbols-outlined">location_on</span>Helsinki</p>
+        <p className="displayed_weather_location"><span className="material-symbols-outlined">location_on</span>{location}</p>
 
       {/* side panel info mode (search mode) */}
       {/* <span class="side_close_icon material-symbols-outlined">close</span>
