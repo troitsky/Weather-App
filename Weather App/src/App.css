@@ -151,10 +151,6 @@ button {
     color: #E7E7EB;
  }
 
-.btn_unit_selection:first-child { 
-    background: #E7E7EB;
-    color: #110E3C;
-}
 .five_days_forecast_part {
     display: flex;
     justify-content: flex-start;
@@ -237,7 +233,7 @@ button {
     height: 40px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.3);
-    transform: rotate(-150deg);
+    /* transform: rotate(-150deg); */
     display: flex;
     justify-content: center;
     align-items: center;
