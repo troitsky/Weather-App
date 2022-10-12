@@ -59,8 +59,8 @@ function App() {
  
 
   async function getWeatherData(lat, lon, units) {
-    const res = await fetch(`/mock_api_data_${units}.json`)
-    // const res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=69644e28c6a9c6d7c04f95ff1035a799&units=${units}&exclude=alerts,minutely,hourly`)
+    // const res = await fetch(`/mock_api_data_${units}.json`)
+    const res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=69644e28c6a9c6d7c04f95ff1035a799&units=${units}&exclude=alerts,minutely,hourly`)
     const data = await res.json();
     setWeather(data)
   }
@@ -94,13 +94,11 @@ function App() {
               setUnits={setUnits}
               selectedUnits = {units}
             />
-
             <UnitButton 
               unitType = "imperial" 
               setUnits={setUnits}
               selectedUnits = {units}
             />
-
           </div>
 
           <div className="five_days_forecast_part">

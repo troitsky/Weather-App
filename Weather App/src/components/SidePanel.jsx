@@ -44,6 +44,39 @@ function updateLocation(loc)  {
   setSearchClosed(true);
 }
 
+async function searchLocationNameByCoords(lat, lon) {
+  const res = await fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=9ee88e04f6e45307c78b6058c26e8c0a`)
+  const data = await res.json();
+  const cityName = data[0].name;
+
+  return cityName
+}
+
+async function getCurrentLocation() {
+
+  let newLat, newLon, newName;
+
+  async function findCityAndUpdateLocation(position) {
+    newLat = position.coords.latitude;
+    newLon = position.coords.longitude;
+    newName = await searchLocationNameByCoords(newLat, newLon)
+
+    updateLocation({
+      locName: newName,
+      lat: newLat,
+      lon: newLon
+    })
+
+  }
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(findCityAndUpdateLocation);
+    
+  } else {
+    console.log("Location detection not supprted")
+  }
+}
+
 function toggleSidePanel() {
   setSearchClosed(prev => !prev);
 }
@@ -56,7 +89,7 @@ return (
           <>
             <div className='side_top_section'>
               <button className="btn_search_location" onClick={toggleSidePanel}>Seach for places</button>
-              <button className="btn_circle get_user_location"><span className="material-symbols-outlined">my_location</span></button>
+              <button className="btn_circle get_user_location" onClick={getCurrentLocation}><span className="material-symbols-outlined">my_location</span></button>
             </div>
             <div className='weather_illustration_part'>
               <img src='/Cloud-background.png' className="weather_illustration_bg" alt="" />
