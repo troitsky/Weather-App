@@ -34,7 +34,7 @@ function App() {
 
   if (weatherData) {
     currentTemp = Math.floor(weatherData.current.temp) ;
-    currentWeatherIcon = `http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@4x.png`;
+    currentWeatherIcon = `https://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@4x.png`;
     currentWeatherDesc = weatherData.current.weather[0].main;
     fiveDayWeather = weatherData.daily.slice(1,6);
     windSpeed = Math.round(weatherData.current.wind_speed);

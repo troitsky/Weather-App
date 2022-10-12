@@ -22,7 +22,7 @@ export default function SidePanel ({
 const [searchResults, setSearchResults] = useState([]);
 
 async function searchLocation()  {
-  const res = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${locationInput}}&limit=10&appid=9ee88e04f6e45307c78b6058c26e8c0a`)
+  const res = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${locationInput}}&limit=10&appid=9ee88e04f6e45307c78b6058c26e8c0a`)
   const data = await res.json();
 
   setSearchResults(data.map(location => {
@@ -45,7 +45,7 @@ function updateLocation(loc)  {
 }
 
 async function searchLocationNameByCoords(lat, lon) {
-  const res = await fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=9ee88e04f6e45307c78b6058c26e8c0a`)
+  const res = await fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=9ee88e04f6e45307c78b6058c26e8c0a`)
   const data = await res.json();
   const cityName = data[0].name;
 
